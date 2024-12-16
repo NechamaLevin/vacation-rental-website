@@ -1,0 +1,62 @@
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-body">
+      <h3 class="card-title text-center mb-4">הרשמה</h3>
+      <form class="form-group" [formGroup]="myFrm" (ngSubmit)="f1(name.value, phon_number_1.value, last_Name.value, email.value, phon_number_2.value, Password.value)">
+        <div class="mb-3">
+          <label for="name" class="form-label">שם</label>
+          <input id="name" class="form-control" formControlName="name" type="text" placeholder="הכנס שם" #name>
+          <div class="alert alert-danger mt-2 p-1" *ngIf="getName().invalid && getName().touched">
+            <p *ngIf="getName().errors['required']">שם שדה חובה</p>
+            <p *ngIf="getName().errors['pattern']">שם מכיל אותיות בלבד</p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="lastName" class="form-label">שם משפחה</label>
+          <input id="lastName" class="form-control" formControlName="lastName" type="text" placeholder="הכנס שם משפחה" #last_Name>
+          <div class="alert alert-danger mt-2 p-1" *ngIf="getlastName().invalid && getlastName().touched">
+            <p *ngIf="getlastName().errors['required']">שם משפחה שדה חובה</p>
+            <p *ngIf="getlastName().errors['pattern']">שם משפחה מכיל אותיות בלבד</p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">מייל</label>
+          <input id="email" class="form-control" formControlName="email" type="text" placeholder="הכנס מייל" #email>
+          <div class="alert alert-danger mt-2 p-1" *ngIf="getemail().invalid && getemail().touched">
+            <p *ngIf="getemail().errors['required']">מייל שדה חובה</p>
+            <p *ngIf="getemail().errors['email']">כתובת מייל לא תקינה</p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="phone1" class="form-label">פלאפון</label>
+          <input id="phone1" class="form-control" formControlName="phone1" type="text" placeholder="הכנס פלאפון" #phon_number_1>
+          <div class="alert alert-danger mt-2 p-1" *ngIf="getphone().invalid && getphone().touched">
+            <p *ngIf="getphone().errors['required']">פלאפון שדה חובה</p>
+            <p *ngIf="getphone().errors['pattern']">פלאפון לא תקין</p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="phone2" class="form-label">פלאפון נוסף</label>
+          <input id="phone2" class="form-control" formControlName="phone2" type="text" placeholder="הכנס פלאפון נוסף" #phon_number_2>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">סיסמא</label>
+          <input id="password" class="form-control" formControlName="password" type="password" placeholder="הכנס סיסמא" #Password>
+          <div class="alert alert-danger mt-2 p-1" *ngIf="getPasword().invalid && getPasword().touched">
+            <p *ngIf="getPasword().errors['required']">סיסמא שדה חובה</p>
+            <p *ngIf="getPasword().errors['pattern']">סיסמא חייבת להכיל לפחות 8 תוים, אותיות אנגלית ומספרים</p>
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <button class="btn btn-primary" type="submit" [disabled]="myFrm.invalid">שליחה</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

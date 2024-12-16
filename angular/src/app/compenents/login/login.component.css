@@ -1,0 +1,23 @@
+.container {
+    max-width: 500px;
+  }
+  
+  .card {
+    border-radius: 15px;
+  }
+  
+  .card-title {
+    color: #4a90e2;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+  }
+  
+  .alert p {
+    margin: 0;
+  }
+  

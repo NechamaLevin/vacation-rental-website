@@ -1,0 +1,23 @@
+<ul class="nav nav-pills">
+
+
+  <li class="nav-item">
+    <a class="nav-link active" data-bs-toggle="pill"  routerLink="home" >home</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link " data-bs-toggle="pill" routerLink="conect">conect</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-bs-toggle="pill" routerLink="login">login</a>
+  </li>
+
+  <li   *ngIf="myServ.a" class="nav-item">
+    <a class="nav-link" data-bs-toggle="pill"  routerLink="addApartment" >addApartment</a>
+  </li>
+  <li   *ngIf="myServ.a" class="nav-item">
+    <a class="nav-link" data-bs-toggle="pill"  routerLink="אזור אישי" >אזור אישי</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
+
